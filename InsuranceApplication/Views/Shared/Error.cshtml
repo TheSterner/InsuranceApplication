@@ -1,13 +1,46 @@
-﻿<!DOCTYPE html>
+﻿
+<!DOCTYPE html>
 <html>
 <head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Error</title>
+	<meta name="viewport" content="width=device-width" />
+	<title>Error</title>
 </head>
 <body>
-    <hgroup>
-        <h1>Error.</h1>
-        <h2>An error occurred while processing your request.</h2>
-    </hgroup>
+
+	<div class="bg-primary rounded border border-danger  center-block p-4">
+		<hgroup>
+			<h1>Something went wrong.</h1>
+			<h2>An error occurred. Please return to the home page and try again.</h2>
+
+		</hgroup>
+		<br />  <br />
+		<h3>Some of the reasons you might have be receiving this error:</h3>
+		<p>
+			A field was left blank.<br />
+			The amount of speeding tickes you declared was a negative number. <br />
+		</p>
+
+		<button type="button" class="btn btn-danger btn-block" onclick="window.location='Index'">
+			Return to Quote Generator
+		</button>
+
+	</div>
 </body>
 </html>
+
+
+
+@*<!DOCTYPE html>
+	<html>
+	<head>
+		<meta name="viewport" content="width=device-width" />
+		<title>Error</title>
+	</head>
+	<body>
+
+		<hgroup>
+			<h1>Error.</h1>
+			<h2>An error occurred while processing your request.</h2>
+		</hgroup>
+	</body>
+	</html>*@
