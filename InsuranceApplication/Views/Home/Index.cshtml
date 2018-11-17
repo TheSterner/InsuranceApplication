@@ -1,4 +1,7 @@
-﻿
+﻿@{
+	ViewBag.Title = "Home Page";
+}
+
 <div class="jumbotron border border-danger">
 	<h1 class="text-center">ShadeTree Insurance Exchange</h1>
 	<p class="lead text-center">Get a free quote today</p>
@@ -10,32 +13,29 @@
 
 	@using (Html.BeginForm("CustomerInfo", "Home", FormMethod.Post))
 	{
-
 		<div class="form-row">
 			<div class="col-lg-3 ">
 				<h4 class="text-center special-label-text">First Name</h4>
 				<input name="FirstName" type="text" class="form-control" placeholder="First name">
 			</div>
-			@*<br />*@
 			<div class="col-lg-3 align-items-center">
 				<h4 class="text-center special-label-text">Last Name</h4>
 				<input name="LastName" type="text" class="form-control" placeholder="Last name">
 			</div>
 
-			@*Email*@
+			@*E-mail*@
 			<div class="col-lg-3">
 				<h4 class="text-center special-label-text">Email</h4>
 				<input name="EmailAddress" type="email" class="form-control" placeholder="Email">
 			</div>
-			@*<br />*@
 
-			@*Birthday*@
+			@*DOB*@
 			<div class="col-lg-3">
 				<h4 class="text-center special-label-text">Date Of Birth</h4>
 				<input name="CustomerDOB" type="date" class="form-control" placeholder="Date of Birth">
 			</div>
 
-			@*Vehicle Year*@
+			@*Car Year*@
 			<div class="col-lg-4 mt-3">
 				<h4 class="text-center special-label-text">Year of Vehicle</h4>
 				<select name="CarYear" class="form-control">
@@ -71,11 +71,9 @@
 					<option>2019</option>
 				</select>
 			</div>
-
 			<br />
 			<br />
-
-			@*Car make/model*@
+			@*Car make and model*@
 			<div class="col-lg-4 mt-3">
 				<h4 class="text-center special-label-text">Car Make</h4>
 				<input name="CarMake" type="text" class="form-control" placeholder="Car Make">
@@ -85,7 +83,6 @@
 				<h4 class="text-center special-label-text">Car Model</h4>
 				<input name="CarModel" type="text" class="form-control" placeholder="Car Model">
 			</div>
-			@*<br />*@
 
 			@*DUI*@
 			<div class="special-div-center col-lg-4 mt-3">
@@ -103,9 +100,7 @@
 					</label>
 				</div>
 			</div>
-			@*<br />*@
 
-			@*<br />*@
 			@*Speeding Tickets*@
 			<div class="special-div-center col-lg-4 mt-3">
 				<h4 class="text-center special-label-text-form-last">How many speeding tickets have you received in the past 5 years?</h4>
@@ -113,7 +108,7 @@
 				<br />
 			</div>
 
-			@*Full Coverage?*@
+			@*Full Coverage Yes or No*@
 			<div class="special-div-center col-lg-4 mt-3">
 				<h4 class="text-center special-label-text-form-last">Would you like Full Coverage or Liability Only?</h4>
 				<div class="form-check">
@@ -130,52 +125,8 @@
 				</div>
 			</div>
 
-			@*Button*@
+			@*Submit Button*@
 			<button type="submit" class="btn btn-danger btn-lg btn-block center-block col-8">Submit for your Quote.</button>
-			@*End Form*@
-
-
-			@*Using end*@
-
 		</div>
 	}
-
-
 </div>
-
-
-
-
-
-
-@*@{
-		ViewBag.Title = "Home Page";
-	}
-
-	<div class="jumbotron">
-		<h1>ASP.NET</h1>
-		<p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-		<p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
-	</div>
-
-	<div class="row">
-		<div class="col-md-4">
-			<h2>Getting started</h2>
-			<p>
-				ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-				enables a clean separation of concerns and gives you full control over markup
-				for enjoyable, agile development.
-			</p>
-			<p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
-		</div>
-		<div class="col-md-4">
-			<h2>Get more libraries</h2>
-			<p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-			<p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
-		</div>
-		<div class="col-md-4">
-			<h2>Web Hosting</h2>
-			<p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-			<p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
-		</div>
-	</div>*@
