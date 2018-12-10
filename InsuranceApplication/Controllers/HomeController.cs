@@ -113,7 +113,7 @@ namespace InsuranceApplication.Controllers
 
 					customerInfo.Quote = quote;
 
-					//db.CustomerInfoes.Add(customerInfo);
+					db.CustomerInfoes.Add(customerInfo);
 					db.SaveChanges();
 
 					int userId = customerInfo.Id;
