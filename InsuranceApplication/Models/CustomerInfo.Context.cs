@@ -26,7 +26,5 @@ namespace InsuranceApplication.Models
         }
     
         public virtual DbSet<CustomerInfo> CustomerInfoes { get; set; }
-        //public virtual DbSet<CustomerInfo1> CustomerInfo1 { get; set; }
-        //public virtual DbSet<CustomerInfo2> CustomerInfo2 { get; set; }
     }
 }

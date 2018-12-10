@@ -25,6 +25,6 @@ namespace InsuranceApplication.Models
         public bool DUI { get; set; }
         public int SpeedingTicket { get; set; }
         public bool FullCoverage { get; set; }
-        public Nullable<double> Quote { get; set; }
+        public Nullable<long> Quote { get; set; }
     }
 }

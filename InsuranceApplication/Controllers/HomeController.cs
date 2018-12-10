@@ -15,14 +15,21 @@ namespace InsuranceApplication.Controllers
 			return View();
 		}
 
+
+
+		//private CustomerInfo db = new CustomerInfo();
 		private InsuranceEntities db = new InsuranceEntities();
 
+
+
+
 		[HttpPost]
-		public ActionResult CustomerInfo(string firstName, string lastName, string emailAddress, string dateOfBirth, int carYear,
+		public ActionResult CustomerInfo(string firstName, string lastName, string emailAddress, string CustomerDOB, int carYear,
 										   string carMake, string carModel, bool dui, string speedingTicket, bool fullCoverage)
+
 		{
 			//Check for Blanks
-			if (string.IsNullOrEmpty(firstName) || string.IsNullOrEmpty(lastName) || string.IsNullOrEmpty(emailAddress) || string.IsNullOrEmpty(dateOfBirth.ToString()) ||
+			if (string.IsNullOrEmpty(firstName) || string.IsNullOrEmpty(lastName) || string.IsNullOrEmpty(emailAddress) || string.IsNullOrEmpty(CustomerDOB.ToString()) ||
 				string.IsNullOrEmpty(carYear.ToString()) || string.IsNullOrEmpty(carMake) || string.IsNullOrEmpty(carModel) || string.IsNullOrEmpty(speedingTicket.ToString()))
 			{
 				return View("~/Views/Shared/Error.cshtml");
@@ -37,7 +44,7 @@ namespace InsuranceApplication.Controllers
 					customerInfo.FirstName = firstName;
 					customerInfo.LastName = lastName;
 					customerInfo.EmailAddress = emailAddress;
-					customerInfo.CustomerDOB = dateOfBirth;
+					customerInfo.CustomerDOB = DateTime.Parse(CustomerDOB);
 					customerInfo.CarYear = carYear;
 					customerInfo.CarMake = carMake;
 					carMake = carMake.ToLower();
@@ -48,7 +55,7 @@ namespace InsuranceApplication.Controllers
 					customerInfo.FullCoverage = fullCoverage;
 
 
-					DateTime grab = DateTime.Parse(dateOfBirth);
+					DateTime grab = DateTime.Parse(CustomerDOB);
 					int year = grab.Year;
 					int age = DateTime.Now.Year - year;
 
@@ -106,7 +113,7 @@ namespace InsuranceApplication.Controllers
 
 					customerInfo.Quote = quote;
 
-					db.CustomerInfoes.Add(customerInfo);
+					//db.CustomerInfoes.Add(customerInfo);
 					db.SaveChanges();
 
 					int userId = customerInfo.Id;

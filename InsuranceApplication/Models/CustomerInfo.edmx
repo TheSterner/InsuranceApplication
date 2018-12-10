@@ -22,44 +22,8 @@
           <Property Name="FullCoverage" Type="bit" Nullable="false" />
           <Property Name="Quote" Type="decimal" Precision="18" Scale="2" />
         </EntityType>
-        <EntityType Name="CustomerInfo1">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="int" Nullable="false" />
-          <Property Name="FirstName" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="LastName" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="EmailAddress" Type="varchar" MaxLength="100" Nullable="false" />
-          <Property Name="CustomerDOB" Type="date" Nullable="false" />
-          <Property Name="CarYear" Type="int" Nullable="false" />
-          <Property Name="CarMake" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="CarModel" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="DUI" Type="bit" Nullable="false" />
-          <Property Name="SpeedingTicket" Type="int" Nullable="false" />
-          <Property Name="FullCoverage" Type="bit" Nullable="false" />
-          <Property Name="Quote" Type="bigint" />
-        </EntityType>
-        <EntityType Name="CustomerInfo2">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="int" Nullable="false" />
-          <Property Name="FirstName" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="LastName" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="EmailAddress" Type="varchar" MaxLength="100" Nullable="false" />
-          <Property Name="CustomerDOB" Type="datetime" Nullable="false" />
-          <Property Name="CarYear" Type="int" Nullable="false" />
-          <Property Name="CarMake" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="CarModel" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="DUI" Type="bit" Nullable="false" />
-          <Property Name="SpeedingTicket" Type="int" Nullable="false" />
-          <Property Name="FullCoverage" Type="bit" Nullable="false" />
-          <Property Name="Quote" Type="decimal" Precision="18" Scale="0" />
-        </EntityType>
         <EntityContainer Name="InsuranceModelStoreContainer">
           <EntitySet Name="CustomerInfo" EntityType="Self.CustomerInfo" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="CustomerInfo1" EntityType="Self.CustomerInfo1" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="CustomerInfo2" EntityType="Self.CustomerInfo2" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
@@ -90,43 +54,7 @@
         </EntityType>
         <EntityContainer Name="InsuranceEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="CustomerInfoes" EntityType="Self.CustomerInfo" />
-          <EntitySet Name="CustomerInfo1" EntityType="InsuranceModel.CustomerInfo1" />
-          <EntitySet Name="CustomerInfo2" EntityType="InsuranceModel.CustomerInfo2" />
         </EntityContainer>
-        <EntityType Name="CustomerInfo1">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" />
-          <Property Name="FirstName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="LastName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="EmailAddress" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="CustomerDOB" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="CarYear" Type="Int32" Nullable="false" />
-          <Property Name="CarMake" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="CarModel" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="DUI" Type="Boolean" Nullable="false" />
-          <Property Name="SpeedingTicket" Type="Int32" Nullable="false" />
-          <Property Name="FullCoverage" Type="Boolean" Nullable="false" />
-          <Property Name="Quote" Type="Int64" />
-        </EntityType>
-        <EntityType Name="CustomerInfo2">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" />
-          <Property Name="FirstName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="LastName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="EmailAddress" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="CustomerDOB" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="CarYear" Type="Int32" Nullable="false" />
-          <Property Name="CarMake" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="CarModel" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="DUI" Type="Boolean" Nullable="false" />
-          <Property Name="SpeedingTicket" Type="Int32" Nullable="false" />
-          <Property Name="FullCoverage" Type="Boolean" Nullable="false" />
-          <Property Name="Quote" Type="Decimal" Precision="18" Scale="0" />
-        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -148,42 +76,6 @@
                 <ScalarProperty Name="LastName" ColumnName="LastName" />
                 <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
                 <ScalarProperty Name="CustomerDOB" ColumnName="CustomerDOB" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="CustomerInfo1">
-            <EntityTypeMapping TypeName="InsuranceModel.CustomerInfo1">
-              <MappingFragment StoreEntitySet="CustomerInfo1">
-                <ScalarProperty Name="Quote" ColumnName="Quote" />
-                <ScalarProperty Name="FullCoverage" ColumnName="FullCoverage" />
-                <ScalarProperty Name="SpeedingTicket" ColumnName="SpeedingTicket" />
-                <ScalarProperty Name="DUI" ColumnName="DUI" />
-                <ScalarProperty Name="CarModel" ColumnName="CarModel" />
-                <ScalarProperty Name="CarMake" ColumnName="CarMake" />
-                <ScalarProperty Name="CarYear" ColumnName="CarYear" />
-                <ScalarProperty Name="CustomerDOB" ColumnName="CustomerDOB" />
-                <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
-                <ScalarProperty Name="LastName" ColumnName="LastName" />
-                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="CustomerInfo2">
-            <EntityTypeMapping TypeName="InsuranceModel.CustomerInfo2">
-              <MappingFragment StoreEntitySet="CustomerInfo2">
-                <ScalarProperty Name="Quote" ColumnName="Quote" />
-                <ScalarProperty Name="FullCoverage" ColumnName="FullCoverage" />
-                <ScalarProperty Name="SpeedingTicket" ColumnName="SpeedingTicket" />
-                <ScalarProperty Name="DUI" ColumnName="DUI" />
-                <ScalarProperty Name="CarModel" ColumnName="CarModel" />
-                <ScalarProperty Name="CarMake" ColumnName="CarMake" />
-                <ScalarProperty Name="CarYear" ColumnName="CarYear" />
-                <ScalarProperty Name="CustomerDOB" ColumnName="CustomerDOB" />
-                <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
-                <ScalarProperty Name="LastName" ColumnName="LastName" />
-                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

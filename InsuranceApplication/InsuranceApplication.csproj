@@ -178,9 +178,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>CustomerInfo.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\CustomerInfo2.cs">
-      <DependentUpon>CustomerInfo.tt</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\CustomerInfoVm.cs" />
     <Compile Include="ViewModels\QuoteVm.cs" />
@@ -241,6 +238,7 @@
     <Content Include="Views\Home\Quote.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Admin\Index.cshtml" />
+    <Content Include="Views\Home\Quote2.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

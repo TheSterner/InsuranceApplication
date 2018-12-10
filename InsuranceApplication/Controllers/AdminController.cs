@@ -15,6 +15,7 @@ namespace InsuranceApplication.Controllers
 			//GET: Admin
 			using (InsuranceEntities db = new InsuranceEntities())
 			{
+			
 				var customerInfos = db.CustomerInfoes.ToList();
 				var customerInfoVms = new List<CustomerInfoVm>();
 				foreach (var customerInfo in customerInfos)
